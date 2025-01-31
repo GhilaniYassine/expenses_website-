@@ -60,3 +60,32 @@ This error indicates that the PostgreSQL development libraries are missing, whic
 ---
 
 This summary is concise and can be easily added to your `README` file for future reference. Let me know if you need further adjustments! 😊
+
+
+
+
+### **Django `.env` File Configuration Issue**
+
+If Django cannot locate your `.env` file and the server fails to run:
+
+1. **Verify File Location**
+  - Place `.env` in project root (same level as `manage.py`)
+  - Double-check file name is exactly `.env`
+
+2. **Check Settings Configuration**
+  ```python
+  from dotenv import load_dotenv
+  import os
+
+  load_dotenv()  # Add this at the top of settings.py
+  ```
+
+3. **Install Required Package**
+  ```bash
+  pip install python-dotenv
+  ```
+
+4. **Verify File Permissions**
+  ```bash
+  chmod 600 .env
+  ```

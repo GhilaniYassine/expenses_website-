@@ -1,3 +1,6 @@
+
+import os 
+
 """
 Django settings for expenseswebsite project.
 
@@ -76,10 +79,10 @@ WSGI_APPLICATION = 'expenseswebsite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME':'incomeexpensesdb',
-        'USER':'postgres',
-        'PASSWORD':'password',
-        'HOST':'localhost',
+        'NAME':os.environ.get('DB_NAME'),
+        'USER':os.environ.get('DB_USER'),
+        'PASSWORD':os.environ.get('DB_PASSWORD'),
+        'HOST':os.environ.get('DB_HOST'),
         
     }
 }
